@@ -23,9 +23,5 @@ gulp.task('js', function() {
 });
 
 gulp.task('default', [
-    'html', 'static', 'well-known'
-]);
-
-gulp.task('all', [
-    'default', 'png'
+    'html', 'static', 'js'
 ]);
