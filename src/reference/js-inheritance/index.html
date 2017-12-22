@@ -1,0 +1,47 @@
+@@include('../../_header.html' , {
+    page_title: 'JS Object Inheritance Reference | nektro.net'
+})
+        <div class="container">
+            <script defer src="https://rawgit.com/nodeca/js-yaml/master/dist/js-yaml.min.js"></script>
+            <script defer src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+            <script defer src="app.js"></script>
+            <h2>JavaScript Object Inheritance</h2>
+            <!-- -->
+            <script type="text/x-template" id="item-template">
+                <li>
+                    <div :class="{bold: isFolder}" @click="toggle">{{model.name}} <span v-if="isFolder">[{{open ? '-' : '+'}}]</span></div>
+                    <ul v-show="open" v-if="isFolder">
+                        <tv-item class="item" v-for="model in model.children" :model="model"></tv-item>
+                    </ul>
+                </li>
+            </script>
+            <!-- -->
+            <style>
+                #app .item {
+                    cursor: pointer;
+                }
+                #app .bold {
+                    font-weight: bold;
+                }
+                #app ul {
+                    padding-left: 1em;
+                    line-height: 1.5em;
+                    list-style-type: none;
+                    border-left: 1px solid black;
+                }
+                #app li:hover { background-color: #eee; }
+                #app li:hover li:hover { background-color: #ddd; }
+                #app li:hover li:hover li:hover { background-color: #ccc; }
+                #app li:hover li:hover li:hover li:hover { background-color: #bbb; }
+                #app li:hover li:hover li:hover li:hover li:hover { background-color: #aaa; }
+                #app li:hover li:hover li:hover li:hover li:hover li:hover { background-color: #999; }
+                #app li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background-color: #888; }
+            </style>
+            <!-- -->
+            <ul id="app">
+                <tv-item class="item" :model="treeData"></tv-item>
+            </ul>
+            <p>Missing anything? Found an error? Message me <a href="https://twitter.com/intent/tweet?text=@Nektro">on Twitter</a>!</p>
+        </div>
+@@include('../../_footer.html' , {
+})
