@@ -13,12 +13,8 @@ gulp.task('html', function() {
 });
 
 gulp.task('static', function() {
-    return gulp.src([
-        './src/**/*.{json,css,js,ttf,yml,txt,mp3}',
-        './src/_headers',
-        './src/.well-known/*.*'
-    ])
-    .pipe(gulp.dest('bin'));
+    return gulp.src(['./static/**/*.*'])
+    .pipe(gulp.dest('bin'))
 });
 
 
