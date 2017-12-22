@@ -21,7 +21,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('static-2', function() {
-    return gulp.src(['./src/**/*.{png,ico,txt,c,bmp}'])
+    return gulp.src(['./src/**/*.{png,ico,txt,c,bmp,ttf}'])
     .pipe(gulp.dest('bin'))
 });
 
