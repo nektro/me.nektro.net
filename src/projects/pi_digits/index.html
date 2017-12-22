@@ -1,0 +1,29 @@
+@@include('../../_header.html' , {
+    page_title: 'Digits of Pi Chart'
+})
+
+        <div class="container">
+            <h2>Digits of Pi</h2>
+            <!-- -->
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" integrity="sha384-86mmuxXJYGTFcyG3Tr7nKO2BYpngqxq/EYijDDr0VCbSXm5HK6tfJbGl4HSwEoUk" crossorigin="anonymous"></script>
+            <script defer src="../pi.js"></script>
+            <script defer src="app.js"></script>
+            <!-- -->
+            <button class="btn btn-info" onclick="pause()" id="pb">Pause</button>
+            <span>Digits: <output id="out"></output></span>
+            <pre>
+                0: <span id="dc0">0</span>
+                1: <span id="dc1">0</span>
+                2: <span id="dc2">0</span>
+                3: <span id="dc3">0</span>
+                4: <span id="dc4">0</span>
+                5: <span id="dc5">0</span>
+                6: <span id="dc6">0</span>
+                7: <span id="dc7">0</span>
+                8: <span id="dc8">0</span>
+                9: <span id="dc9">0</span>
+            </pre>
+        </div>
+
+@@include('../../_footer.html' , {
+})
