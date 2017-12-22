@@ -21,11 +21,6 @@ gulp.task('static', function() {
     .pipe(gulp.dest('bin'));
 });
 
-gulp.task('well-known', function() {
-    return gulp.src('./src/.well-known/**')
-    .pipe(print())
-    .pipe(gulp.dest('bin/.well-known'));
-})
 
 gulp.task('default', [
     'html', 'static', 'well-known'
