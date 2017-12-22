@@ -9,6 +9,7 @@
                     case '?emojione2': return `https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/${icon4}.svg`;
                     case '?noto':      return `https://noto-website.storage.googleapis.com/emoji/emoji_u${icon4.replaceAll('-','_')}.png`;
                     case '?emojione3': return `https://api.emojione.com/emoji/${icon4}/download/64`;
+                    //case '?gmail': /* same as noto but worse */ return `https://mail.google.com/mail/e/${icon4}`;
                 }
             });
         });
