@@ -17,6 +17,10 @@ gulp.task('static', function() {
     .pipe(gulp.dest('bin'))
 });
 
+gulp.task('js', function() {
+    return gulp.src(['./src/**/*.js'])
+    .pipe(gulp.dest('bin'))
+});
 
 gulp.task('default', [
     'html', 'static', 'well-known'
