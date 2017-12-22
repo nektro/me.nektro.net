@@ -1,0 +1,95 @@
+@@include('../../_header.html' , {
+    page_title: 'Physics Reference | nektro.net'
+})
+        <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'], ['\\(','\\)']]}});</script>
+        <style>.MJXc-display { margin:0px; text-align:left !important; }</style>
+        <div class="container" data-route="">
+            <h2>Physics Reference</h2>
+            <!-- Want to make a page like this yourself?
+            http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+            -->
+            <hr>
+            <div class="alert alert-info">
+                <div><strong>Heads up!</strong> More coming soon!</div>
+            </div>
+            <section>
+                <div class="card">
+                    <div class="card-block">
+                        <h3 class="card-title">Kinematics</h3>
+                        <div class="card-text">
+                            <table class="table">
+                                <thead>
+                                    <tr><th>Constants</th><th></th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Gravity</td><td>$ g = -9.8 \frac{m}{s^2} $</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <thead>
+                                    <tr><th>Equations</th><th></th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>$ x = x_0 + v_0 t + \frac{1}{2}at^2 $</td></tr>
+                                    <tr><td>$ v = \frac{Δs}{t} $</td></tr>
+                                    <tr><td>$ a = \frac{Δv}{t} $</td></tr>
+                                    <tr><td>$ v = v_0 + at $</td></tr>
+                                    <tr><td>$ v^2 = v_0^2 + 2a( x - x_0 ) $</td></tr>
+                                    <tr><td>$ \vec{a} ⋅ \vec{b} = |a| × |b| × cos(\theta)  $</td></tr>
+                                    <tr><td>$ \vec{a} × \vec{b} = a_x b_x + a_y b_y $</td></tr>
+                                    <tr><td>$ |\vec{a}| = \sqrt{ a_x^2 + a_y^2 } $</td></tr>
+                                    <tr><td>$ Δv = \frac{Δx}{t} $</td></tr>
+                                    <tr><td>$ Δx = x_2 - x_1 $</td></tr>
+                                    <tr><td>$ W = K_f - K_i $</td></tr>
+                                    <tr><td>$ K = \frac{1}{2}mv^2 $</td></tr>
+                                    <tr><td>$ W_g = -mg Δy $</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="card">
+                    <div class="card-block">
+                        <h3 class="card-title">Electromagnetism</h3>
+                        <div class="card-text">
+                            <table class="table">
+                                <thead>
+                                    <tr><th>Constants</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Vacuum permittivity</td><td>$ ε_0 = 8.9875517873681764 × 10^{-12} { F \over m } $</td></tr>
+                                    <tr><td>Mass of electron</td><td>$ 9.10938356 × 10^{-31} kg $</td></tr>
+                                    <tr><td>Mass of proton</td><td>$ 1.6726219 × 10^{-27} kg $</td></tr>
+                                    <tr><td>Coulomb's constant</td><td>$ k = 8.9875517873681764 × 10^9 { N m^2 \over C^2 } $</td></tr>
+                                    <tr><td>Elementary electric charge</td><td>$ 1.60217662 × 10^{19} \ C $</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <thead>
+                                    <tr><th>Equations</th></tr>
+                                </thead>
+                                <tbody>
+                                    <!-- -->
+                                    <tr><td>$$ F = ma = k \frac{{ q_1 q_2 }}{r^2} = Eq $$</td></tr>
+                                    <tr><td>$$ E = k \frac{q}{r^2} $$</td></tr>
+                                    <tr><td>$$ \tau = r F sin(\theta) $$</td></tr>
+                                    <tr><td>$$ E_{\text{ring}} = k \frac{qz}{{ z^2 + r^2 }^{\frac{3}{2}}} $$</td></tr>
+                                    <tr><td>$$ λ = \frac{q}{2 π r} $$</td></tr>
+                                    <tr><td>$$ σ = \frac{q}{π r^2} $$</td></tr>
+                                    <tr><td>$$ E_{\text{disk}} = 2 π k σ \left(\frac{1 - z}{\sqrt{z^2 + r^2}}\right) $$</td></tr>
+                                    <tr><td>$$ E_{\text{dipole}} = \frac{2 k q d}{z^3} $$</td></tr>
+                                    <tr><td>$$ Φ = \frac{q_{\text{enc}}}{ε_0} $$</td></tr>
+                                    <tr><td>$$ E_{\text{inf. rod}} = \frac{1}{2 π ε_0}\frac{λ}{d} $$</td></tr>
+                                    <tr><td>$$ E_{\text{inf. sheet}} = \frac{σ}{2 ε_0} $$</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+@@include('../../_footer.html' , {
+})
