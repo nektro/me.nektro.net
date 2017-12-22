@@ -15,16 +15,11 @@ gulp.task('static', function() {
     .pipe(gulp.dest('bin'))
 });
 
-gulp.task('js', function() {
-    return gulp.src(['./src/**/*.js'])
-    .pipe(gulp.dest('bin'))
-});
-
 gulp.task('static-2', function() {
-    return gulp.src(['./src/**/*.{png,ico,txt,c,bmp,ttf}'])
+    return gulp.src(['./src/**/*.{png,ico,txt,c,bmp,ttf,js,css}'])
     .pipe(gulp.dest('bin'))
 });
 
 gulp.task('default', [
-    'html', 'static', 'js', 'static-2'
+    'html', 'static', 'static-2'
 ]);
