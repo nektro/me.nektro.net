@@ -12,12 +12,6 @@ gulp.task('html', function() {
     .pipe(gulp.dest('bin'));
 });
 
-gulp.task('png', function() {
-    return gulp.src(['./src/**/*.png'])
-    .pipe(imagemin())
-    .pipe(gulp.dest('bin'));
-});
-
 gulp.task('static', function() {
     return gulp.src([
         './src/**/*.{json,css,js,ttf,yml,txt,mp3}',
