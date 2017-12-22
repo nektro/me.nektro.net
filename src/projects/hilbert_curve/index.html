@@ -1,0 +1,35 @@
+@@include('../../_header.html' , {
+    page_title: 'Hilbert Space-Filling Curve Explorer | nektro.net'
+})
+        <div class="container">
+            <style>
+                input[type="number"] {
+                    display: block;
+                    width: 100%;
+                }
+            </style>
+            <script defer src="https://rawgit.com/Nektro/WebUtils/221c2b6/src/geometry.js" charset="utf-8"></script>
+            <script defer src="https://rawgit.com/Nektro/WebUtils/221c2b6/src/classes/Pencil.js" charset="utf-8"></script>
+            <script defer src="hilbert.js" charset="utf-8"></script>
+            <script defer src="app.js" charset="utf-8"></script>
+            <h2>Hilbert Space-Filling Curve Explorer</h2>
+            <hr />
+            <p>This project was inspired by <a href="https://www.youtube.com/watch?v=3s7h2MHQtxc">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a></p>
+            <div class="alert alert-danger" role="alert">
+                <strong>Note:</strong> While there is technically no max value on the <b>order</b> field,
+                the math required to calculate each curve goes up exponentially which each iteration, so
+                going above 8 or 9 is not advised.
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="d">Order of Curve</label>
+                    <input type="number" id="d" min="1" max="10" pattern="\d*" value="2" />
+                </div>
+            </div>
+            <br />
+            <center>
+                <canvas id="canvas" width="100" height="100"></canvas>
+            </center>
+        </div>
+@@include('../../_footer.html' , {
+})
