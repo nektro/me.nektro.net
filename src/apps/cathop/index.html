@@ -21,8 +21,14 @@
         <link rel="stylesheet" href="./assets/css/app.min.css">
         
         <script>if (location.hostname !== 'localhost') window.addEventListener('error', function(e) { alert(`${e.message} ${e.filename}:${e.linenumber}`); });</script>
+        <script defer src="https://cdn.rawgit.com/Nektro/js-polyfills/b611f13/src/Array.prototype.last.js"></script>
+        <script defer src="https://cdn.rawgit.com/Nektro/js-polyfills/b611f13/src/Array.prototype.clear.js"></script>
+        <script defer src="https://cdn.rawgit.com/Stuk/jszip/9fb481a/dist/jszip.min.js"></script>
+        <script type="module" src="./assets/js/app.js"></script>
     </head>
     <body>
         <canvas id="screen" width="375" height="667"></canvas>
+        <img hidden src="./assets/game/buttons/replay.png" id="i_replay_button" alt="" />
+        <img hidden src="./assets/game/new_highscore.png" id="i_new_highscore" alt="" />
     </body>
 </html>
