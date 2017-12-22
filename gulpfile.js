@@ -20,6 +20,11 @@ gulp.task('js', function() {
     .pipe(gulp.dest('bin'))
 });
 
+gulp.task('static-2', function() {
+    return gulp.src(['./src/**/*.{png}'])
+    .pipe(gulp.dest('bin'))
+});
+
 gulp.task('default', [
-    'html', 'static', 'js'
+    'html', 'static', 'js', 'static-2'
 ]);
