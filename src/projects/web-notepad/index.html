@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="notepad">
+    <head>
+        <title>Notepad</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"    content="width=device-width,initial-scale=1">
+        <meta name="description" content="Notepad. A web app for editting text documents based on the famous Microsoft Windows applications.">
+        <link rel="icon"       href="favicon.ico">
+        <link rel="author"     href="https://dev.nektro.net/">
+        <link rel="manifest"   href="manifest.json">
+        <script src="https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-hi-ce.js"></script>
+        <link rel="import"     href="../win-head.html">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.css">
+        <link rel="stylesheet" type="text/css" href="app.css">
+        <script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script defer src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+        <script defer src="https://unpkg.com/sweetalert@1.1.3/dist/sweetalert.min.js"></script>
+        <script defer src="https://unpkg.com/dexie@1.5.1/dist/dexie.min.js"></script>
+        <script defer src="https://rawgit.com/Nektro/WebUtils/4f44f2c/src/keyboard.js"></script>
+        <script defer src="https://rawgit.com/youbastard/jquery.getQueryParameters/master/qp.js"></script>
+        <script defer src="https://rawgit.com/Nektro/js-polyfills/7f00cde/src/Event.prototype.path.js"></script>
+        <script defer src="app.js"></script>
+    </head>
+    <body ng-controller="appCtrl">
+        <header>
+            <win-head id="windows-head" color="#FFBD0C" icon="Notepad.png" name="Notepad" file="{please wait...}"></win-head>
+            <nav id="windows-menubar">
+                <ul>
+                    <li ng-repeat="menu in menubar">{{menu.name}}
+                        <ul>
+                            <li ng-repeat="item in menu.sub" ng-click="clickMenuItem($parent.$index,$index)">{{item.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <input type="file" id="filein" hidden>
+            <textarea id="doc">{please wait...}</textarea>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+header #windows-menubar {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    -webkit-user-select: none
+}
+header #windows-menubar>ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0
+}
+header #windows-menubar>ul>li {
+    display: inline-block;
+    padding: 5px;
+    margin: 1px
+}
+header #windows-menubar>ul>li::first-letter {
+    text-decoration: underline
+}
+header #windows-menubar>ul>li:hover {
+    background-color: #F2F9FC;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin: 0;
+    cursor: pointer
+}
+header #windows-menubar>ul>li[aria-expanded=true]>ul {
+    display: block;
+    background-color: #efefef
+}
+header #windows-menubar>ul>li>ul {
+    list-style-type: none;
+    display: none;
+    box-shadow: 2px 2px 5px #333;
+    position: absolute;
+    transform: translate(-5px, 6px);
+    padding-left: 0
+}
+header #windows-menubar>ul>li>ul>li {
+    padding: 3px 3px 3px 40px;
+    min-width: 150px;
+    margin: 0 3px
+}
+header #windows-menubar>ul>li>ul>li:hover {
+    background-color: #9bc0e3
+}
+header #windows-menubar>ul>li>ul>li:first-child {
+    margin-top: 3px
+}
+header #windows-menubar>ul>li>ul>li:last-child {
+    margin-bottom: 3px
+}
+/** ** ** ** **/
+body,
+html {
+    width: 100%;
+    height: 100%
+}
+body {
+    overflow: hidden;
+    margin: 0;
+    font-family: Arial
+}
+main {
+    height: calc(100% - 69px)
+}
+#doc {
+    width: calc(100% - 6px);
+    height: 100%;
+    overflow: scroll
+}
+
+@media print {
+    #windows-head {
+        background-color: rgba(0,0,0,0);
+    }
+    #windows-menubar {
+        display: none;
+    }
+    #doc {
+        overflow: hidden;
+        border: none;
+        resize: none;
+    }
+}

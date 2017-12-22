@@ -1,0 +1,46 @@
+<style>
+    win-head {
+        display: block;
+        padding: 7px 5px 5px;
+        -webkit-user-select: none;
+    }
+    win-head > * {
+        display: inline-block;
+        padding: 0px 3px;
+    }
+</style>
+<script>
+    customElements.define('win-head', class extends HTMLElement {
+        constructor() {
+            super();
+            this._setThemeColor(this.getAttribute('color'));
+
+            var img = document.createElement('img');
+            img.src = this.getAttribute('icon');
+            img.width = 16;
+            img.height = 16;
+            this.appendChild(img);
+
+            var div = document.createElement('div');
+            div.innerHTML = this.getAttribute('file') + " - " + this.getAttribute('name');
+            this.appendChild(div);
+        }
+        static get observedAttributes() {
+            return ['color','icon','name','file'];
+        }
+        attributeChangedCallback(attr, oV, nV) {
+            if (attr == 'color')
+                this._setThemeColor(nV);
+            if (attr == 'file')
+                this.children[1].innerHTML = nV + " - " + this.getAttribute('name');
+        }
+        _setThemeColor(c) {
+            this.style.backgroundColor = c;
+            var rgb = this.style.backgroundColor.substring(4).split("").reverse();
+            rgb.shift();
+            rgb = rgb.reverse().join("").split(", ").map(function(x) { return parseInt(x); });
+            var o = Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) /1000);
+            this.style.color = ((o > 125) ? ('black') : ('white'));
+        }
+    });
+</script>
