@@ -1,0 +1,23 @@
+@@include('../../_header.html' , {
+    page_title: 'Pixelator | Nektro.net',
+    page_desc: 'An online image editor right in your browser'
+})
+
+<script defer src="app.js" defer=""></script>
+<div class="container-fluid">
+    <style>button.btn { margin-bottom:10px; }</style>
+    <section>
+        <h3 class="header">Pixelator</h3>
+        <p>On online image editor to add filters and more right in your browser!</p>
+        <input type="file" id="file">
+        <br><br>
+        <div id="buttons" style="display:none">
+            <button type="button" class="btn btn-info" id="btn_restore">Revert Image</button>
+        </div>
+        <canvas id="can" width="400" height="300" style="display:block; border:1px solid #eee;"></canvas>
+        <br><br>
+    </section>
+</div>
+
+@@include('../../_footer.html' , {
+})
