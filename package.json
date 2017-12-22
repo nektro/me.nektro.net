@@ -2,8 +2,6 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-ignore": "^2.0.2",
-    "gulp-imagemin": "^3.4.0",
     "gulp-include-html": "^1.0.14",
     "gulp-print": "^2.0.1"
   }

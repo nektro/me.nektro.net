@@ -1,8 +1,6 @@
 const gulp = require('gulp');
 const gih = require("gulp-include-html");
 const htmlmin = require('gulp-htmlmin');
-const imagemin = require('gulp-imagemin');
-const gulpIgnore = require('gulp-ignore');
 const print = require('gulp-print');
 
 gulp.task('html', function() {
