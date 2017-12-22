@@ -1,0 +1,14 @@
+/**
+ */
+article.panel {
+    max-width: 1000px;
+    padding: 15px 0;
+}
+article.panel section {
+    display: flex;
+    flex-direction: column;
+}
+article.panel section div {
+    padding: 15px;
+    border-top: 1px solid #3333;
+}
