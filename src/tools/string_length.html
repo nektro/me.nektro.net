@@ -1,0 +1,27 @@
+@@include('../_header.html' , {
+    page_title: 'String Length | nektro.net'
+})
+        <div class="container" data-route="/tools/string_length">
+            <textarea id="in"></textarea>
+            <br>
+            <pre id="out">Length: 0</pre>
+            
+            <style>
+                textarea {
+                    width: 25vw;
+                    height: 25vh;
+                }
+            </style>
+			
+			<script>
+				(function() {
+					window.addEventListener('load', function() {
+						document.getElementById('in').addEventListener('keyup', function(e) {
+							out.innerHTML = "Length: " + this.value.length;
+						});
+					});
+				})();
+			</script>
+        </div>
+@@include('../_footer.html' , {
+})
