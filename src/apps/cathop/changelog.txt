@@ -1,0 +1,63 @@
+CAT HOP CHANGELOG
+
+0.5.5:
+    Sean:
+        Redid state transitions and also stopped frame flash from previous state
+0.5.4:
+    Andrew:
+        Thanksgiving 2017 - Added turkey character
+0.5.3:
+    Andrew:
+        added sfx for jump, death, new highscore, and button click
+    Sean:
+        added in sound effects
+        added state transitions
+0.5.2:
+    Sean:
+        added preliminary adsense code
+0.5.1:
+    Andrew:
+        added city_day music
+        added city_night music
+        updated city_day hole
+    Sean:
+        rewrote asset loading again to allow for music
+        removed speed cap
+        fixed the bug where enemies spawn in the middle of the map
+0.5:
+    Sean:
+        add map select
+        add character select
+0.4.3:
+    Andrew:
+        Added main logo
+        Added start button
+0.4.2:
+    Sean:
+        Added <noscript> support
+        Put caniuse.com link in nomodule script
+0.4.1:
+    Sean:
+        Made cat to hole death threshhold .25 up from .5
+    Andrew:
+        Added new highscore image
+0.4:
+    Sean:
+        changed backend loading of textures to support mulitple maps and characters
+        used ES6 Modules :D
+    Andrew:
+        added map - day_night
+0.3:
+    Sean:
+        Added highscore tracking
+0.2:
+    Andrew:
+        Added day_city map with (parallax and background)
+        Added Gyzmo the cat
+0.1:
+    Sean:
+        Added death screen and main menu so you don't have to refesh the page for every playthrough
+0.0:
+    Sean:
+        Added core gameplay state of runner game with cat
+FIN
