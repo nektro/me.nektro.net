@@ -12,12 +12,12 @@ gulp.task('html', function() {
 
 gulp.task('static', function() {
     return gulp.src(['./static/**/*.*'])
-    .pipe(gulp.dest('bin'))
+    .pipe(gulp.dest('bin'));
 });
 
 gulp.task('static-2', function() {
     return gulp.src(['./src/**/*.{png,ico,txt,c,bmp,ttf,js,css,mp3,yml}'])
-    .pipe(gulp.dest('bin'))
+    .pipe(gulp.dest('bin'));
 });
 
 gulp.task('default', [
