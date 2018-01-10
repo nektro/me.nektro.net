@@ -20,6 +20,10 @@ gulp.task('static-2', function() {
     .pipe(gulp.dest('bin'));
 });
 
+gulp.task('netlify', function() {
+    return gulp.src('./static/_headers').pipe(gulp.dest('bin'));
+});
+
 gulp.task('default', [
-    'html', 'static', 'static-2'
+    'html', 'static', 'static-2', 'netlify'
 ]);
