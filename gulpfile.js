@@ -2,7 +2,6 @@
 const gulp = require('gulp');
 const gih = require("gulp-include-html");
 const htmlmin = require('gulp-htmlmin');
-const print = require('gulp-print');
 
 gulp.task('html', function() {
     return gulp.src('./src/**/*.html')
