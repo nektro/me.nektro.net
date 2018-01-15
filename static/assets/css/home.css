@@ -9,6 +9,6 @@ article.panel section {
     flex-direction: column;
 }
 article.panel section div {
-    padding: 15px;
+    padding: 8px;
     border-top: 1px solid #3333;
 }
