@@ -43,3 +43,5 @@ I used to store these on Facebook, but I wanted to share them.
 > "A society grows great when old men plant trees whose shade they know they will never sit in."
 
 > "Any community that gets its laughs by pretending to be idiots will eventually be flooded by actual idiots who mistakenly believe that they're in good company."
+
+> "If I die now, I'm gonna be miserable for the rest of my life."
