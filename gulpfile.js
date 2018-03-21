@@ -1,4 +1,3 @@
-/* jshint esversion:6 */
 const gulp = require('gulp');
 const gih = require("gulp-include-html");
 const htmlmin = require('gulp-htmlmin');
