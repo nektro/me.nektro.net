@@ -45,3 +45,11 @@ I used to store these on Facebook, but I wanted to share them.
 > "Any community that gets its laughs by pretending to be idiots will eventually be flooded by actual idiots who mistakenly believe that they're in good company."
 
 > "If I die now, I'm gonna be miserable for the rest of my life."
+
+> "Our problems are like diamonds: we inflate their value because we don't understand how many they have in Africa."
+
+> "A ship is safe in harbor, but that is not what a ship was built for."
+
+> "Calm seas never made a skillful sailor."
+
+> "I've had a lot of worries in my life, most of which never happened."
