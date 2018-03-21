@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const gih = require("gulp-include-html");
+const gih = require('gulp-include-html');
 const htmlmin = require('gulp-htmlmin');
 
 gulp.task('html', function() {
