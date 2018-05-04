@@ -53,3 +53,7 @@ I used to store these on Facebook, but I wanted to share them.
 > "Calm seas never made a skillful sailor."
 
 > "I've had a lot of worries in my life, most of which never happened."
+
+> "Just because your life is falling apart, doesn't mean you have to lose the desire to live it."
+
+> https://www.reddit.com/r/AskReddit/comments/8f8lk4/
