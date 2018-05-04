@@ -2,6 +2,7 @@
 (function () {
     window.addEventListener('load', function () {
         //
+        let prev = 0;
         const pusher = new Pusher('3e1959352a588fd552e8', {
             cluster: 'us2',
             encrypted: true
@@ -9,6 +10,7 @@
         const channel = pusher.subscribe('my-channel');
         channel.bind('score', function(data) {
             document.getElementById('button').firstElementChild.textContent = data.value;
+            prev = parseInt(data.by);
         });
         //
         fetch(`https://oneapi.nektro.net/button/ping.php`)
