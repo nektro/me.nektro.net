@@ -11,6 +11,7 @@
         channel.bind('score', function(data) {
             document.getElementById('button').firstElementChild.textContent = data.value;
             prev = parseInt(data.by);
+            document.getElementById('button').style.backgroundColor = (prev === pusher.sessionID ? 'darkred' : 'darkcyan');
         });
         //
         fetch(`https://oneapi.nektro.net/button/ping.php`)
