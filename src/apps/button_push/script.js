@@ -2,7 +2,6 @@
 (function () {
     window.addEventListener('load', function () {
         //
-        Pusher.logToConsole = true;
         const pusher = new Pusher('3e1959352a588fd552e8', {
             cluster: 'us2',
             encrypted: true
