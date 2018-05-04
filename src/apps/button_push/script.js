@@ -21,12 +21,14 @@
         });
         //
         document.getElementById('button').addEventListener('click', function () {
-            fetch(`https://oneapi.nektro.net/button/push.php?key=${pusher.sessionID}`)
-            .then(x => x.json())
-            .then(x => {
-                document.getElementById('button').firstElementChild.textContent = x.score;
-                if (x.win) { swal('Congratulations!', 'You won!', 'success'); }
-            });
+            if (!(prev === pusher.sessionID)) {
+                fetch(`https://oneapi.nektro.net/button/push.php?key=${pusher.sessionID}`)
+                .then(x => x.json())
+                .then(x => {
+                    document.getElementById('button').firstElementChild.textContent = x.score;
+                    if (x.win) { swal('Congratulations!', 'You won!', 'success'); }
+                });
+            }
         });
         //
         document.getElementById('info').addEventListener('click', function () {
