@@ -1,5 +1,23 @@
 /**
  */
+#about {
+    display: flex;
+    flex-direction: row;
+}
+#about > div {
+    margin: 1em;
+}
+#about > :nth-child(2) {
+    flex-grow: 1;
+}
+@media (max-width: 576px) {
+    #about {
+        flex-direction: column;
+    }
+    #about > div {
+        margin: 0;
+    }
+}
 article.panel {
     max-width: 1000px;
     padding: 15px 0;
