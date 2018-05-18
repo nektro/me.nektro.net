@@ -25,17 +25,24 @@ article.panel {
 article.panel section {
     display: flex;
     flex-direction: column;
+    flex-flow: wrap;
 }
 article.panel section div {
     padding: 8px;
     border-top: 1px solid #3333;
     display: inline-block;
 }
-#apps section {
-    flex-flow: wrap;
-}
 #apps section div {
     padding-right: 20px;
     border-bottom: 1px solid #3333;
     margin-bottom: -1px;
+}
+#social section div {
+    flex-grow: 1;
+}
+#social section div a {
+    color: black;
+}
+#social section div a span {
+    font-size: 5em;
 }
