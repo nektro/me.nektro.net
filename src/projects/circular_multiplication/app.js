@@ -38,7 +38,7 @@ function makeCircle() {
         pen.drawLine(b[i][0], b[i][1], b[n][0], b[n][1], '#333');
     }
     //
-    location.hash = `${d}x${m}`;
+    location.replace(`#${d}x${m}`)
     //
     let qS = encodeQueryData({
         text: `Try out modular multiplication around a cirlce @ ${location.origin}${location.pathname}${location.hash}`,
