@@ -57,3 +57,5 @@ I used to store these on Facebook, but I wanted to share them.
 > "Just because your life is falling apart, doesn't mean you have to lose the desire to live it."
 
 > https://www.reddit.com/r/AskReddit/comments/8f8lk4/
+
+> "If a system is to have conceptual integrity, someone must control the concepts."
