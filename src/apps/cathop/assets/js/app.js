@@ -366,6 +366,7 @@ window.addEventListener('load', async function() {
     })());
 
     //
+    document.getElementById("loader").remove();
     game.start();
 });
 //

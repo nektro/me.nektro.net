@@ -14,3 +14,23 @@ body {
     font-weight: 400;
     src: url('./Pixeled.ttf');
 }
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+#loader {
+    text-align: center;
+
+    p:nth-child(2) {
+        font-size: 3em;
+        animation-name: spin;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+    }
+}
