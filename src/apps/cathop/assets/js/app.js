@@ -19,9 +19,9 @@ import { Ground } from "./Ground.js";
 import { Cat } from "./Cat.js";
 import { Enemy } from "./Enemy.js";
 //
-const VERSION = `0.5.5`;
+const VERSION = `0.6`;
 const MAPS = ['city_day','city_night'];
-const CATS = ['gyzmo','lilac','turkey'];
+const CATS = ['gyzmo','lilac','turkey','skater&scooter'];
 //
 window.addEventListener('load', async function() {
     console.log(`Starting Cat Hop v${VERSION}`);

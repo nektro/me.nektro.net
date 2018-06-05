@@ -1,5 +1,11 @@
 CAT HOP CHANGELOG
 
+0.6:
+    Sean:
+        add Skater & Scooter cat
+0.5.6:
+    Sean:
+        add loading before game
 0.5.5:
     Sean:
         Redid state transitions and also stopped frame flash from previous state
