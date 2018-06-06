@@ -1,0 +1,37 @@
+@@include('../../_header.html', {
+    page_title: 'Watermarker | nektro.net'
+})
+        <div class="container">
+            <link rel="stylesheet" href="style.css">
+            <script src="https://cdn.rawgit.com/Stuk/jszip/9fb481a/dist/jszip.min.js"></script>
+            <script type="module" src="script.js"></script>
+            <h2>Watermarker</h2>
+            <p>Add a watermark to images with ease right in your browser! Input your source images
+                in the first box and your watermark for the second one then click Launch. It will
+                add your watermark to every image and save them back to you in a ZIP folder.</p>
+            <hr>
+            <!--  -->
+            <div id="app">
+                <div>
+                    <label for="images">All Images</label>
+                    <br>
+                    <input type="file" multiple id="images" accept="image/*">
+                </div>
+                <div>
+                    <label for="mark">Watermark Image</label>
+                    <br>
+                    <input type="file" id="mark" accept="image/*">
+                </div>
+                <div>
+                    <br>
+                    <button id="go">Launch</button>
+                    <div hidden>
+                        <br>
+                        <p>Loading...</p>
+                        <p>&#x21BA;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+@@include('../../_footer.html', {
+})
