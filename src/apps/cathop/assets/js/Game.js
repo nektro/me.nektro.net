@@ -2,6 +2,7 @@
  */
 //
 import * as a from "./util.js";
+import * as b from "./remote.js";
 //
 export class CH_Game {
     constructor() {
@@ -57,14 +58,15 @@ export class CH_Game {
         requestAnimationFrame(this.run.bind(this));
     }
     start() {
-        if (navigator.userAgent.indexOf("Mobile") > -1) {
-            window.addEventListener("touchstart", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickDown(e); });
-            window.addEventListener("touchend", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickUp(e); });
-        }
-        else {
-            window.addEventListener("mousedown", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickDown(e); });
-            window.addEventListener("mouseup", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickUp(e); });
-        }
+        window.addEventListener("touchstart", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickDown(e); });
+        window.addEventListener("touchend", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickUp(e); });
+        //
+        window.addEventListener("mousedown", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickDown(e); });
+        window.addEventListener("mouseup", (e) => { if (!(this.transitioner.runState > 0)) this.activeState.clickUp(e); });
+        //
+        b.addKeyDownListener((e) => { if (!(this.transitioner.runState > 0)) if (e.code === b.Keys.ArrowUp || e.code === b.Keys.Space) this.activeState.clickDown(e); });
+        window.addEventListener("keyup",   (e) => { if (!(this.transitioner.runState > 0)) if (e.code === b.Keys.ArrowUp || e.code === b.Keys.Space) this.activeState.clickUp(e); });
+        //
         this.gotoState(this.states[0].id);
         this.run();
     }

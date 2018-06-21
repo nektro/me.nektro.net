@@ -135,9 +135,13 @@ window.addEventListener("load", async function() {
             a.pen.drawText(5, a.h - 5, "fill", `(c) Sean Denny 2018, v${VERSION}`, "white", `10px "${a.font_p}"`);
         }
         clickDown(e) {
-            const { clientX, clientY } = (e.__proto__.constructor === MouseEvent ? e : e.changedTouches[0]); // click event position
+            const {clientX, clientY} = (
+                e.__proto__.constructor === MouseEvent ? e :
+                    e.__proto__.constructor === KeyboardEvent ? {clientX:0, clientY:0} :
+                        e.changedTouches[0]
+            );
             const click = new Point(clientX, clientY);
-            if (this.start_button.getBoundingRect().intersects(click)) {
+            if (this.start_button.getBoundingRect().intersects(click) || (clientX === 0 && clientY === 0)) {
                 sfx.click.play();
                 game.gotoState("game");
             }
@@ -246,8 +250,12 @@ window.addEventListener("load", async function() {
             }
         }
         clickUp(e) {
-            const {clientX, clientY} = (e.__proto__.constructor === MouseEvent ? e : e.changedTouches[0]); // click event position
-            if (this.replay_button.getBoundingRect().intersects(new Point(clientX,clientY))) {
+            const {clientX, clientY} = (
+                e.__proto__.constructor === MouseEvent ? e :
+                    e.__proto__.constructor === KeyboardEvent ? {clientX:0, clientY:0} :
+                        e.changedTouches[0]
+            );
+            if (this.replay_button.getBoundingRect().intersects(new Point(clientX,clientY)) || (clientX === 0 && clientY === 0)) {
                 if (high_score.just_set) setHighScore(score);
                 enemies = [];
                 sfx.click.play();
