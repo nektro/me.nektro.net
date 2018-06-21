@@ -8,7 +8,7 @@
  */
 //
 import * as a from "./util.js";
-import { Point, Loop, array_to_object } from "./remote.js";
+import { Point, Loop } from "./remote.js";
 import { CH_GameState } from "./Game.js";
 import { CatHopGame } from "./CatHopGame.js";
 import { CH_PictureStatic } from "./Picture.js";
@@ -20,6 +20,14 @@ import { Enemy } from "./Enemy.js";
 const VERSION = "0.6";
 const MAPS = ["city_day","city_night"];
 const CATS = ["gyzmo","lilac","turkey","skater&scooter"];
+//
+function array_to_object(keys, values) {
+    const obj = {};
+    for (let i = 0; i < keys.length; i++) {
+        obj[keys[i]] = values[i];
+    }
+    return obj;
+}
 //
 window.addEventListener("load", async function() {
     console.log(`Starting Cat Hop v${VERSION}`);
