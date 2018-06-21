@@ -59,3 +59,5 @@ I used to store these on Facebook, but I wanted to share them.
 > https://www.reddit.com/r/AskReddit/comments/8f8lk4/
 
 > "If a system is to have conceptual integrity, someone must control the concepts."
+
+> "You don't thank the kidnapper for returning the hostages."
