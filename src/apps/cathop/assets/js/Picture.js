@@ -2,7 +2,7 @@
  */
 //
 import * as a from "./util.js";
-import { Loop, Rectangle, Point } from "./remote.js";
+import { Loop, Rectangle, Point, Square } from "./remote.js";
 //
 export class CH_Picture {
     constructor(img) {

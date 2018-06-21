@@ -1,5 +1,8 @@
 CAT HOP CHANGELOG
 
+0.6.1:
+    Meghan:
+        refactor to adhere to eslint
 0.6:
     Sean:
         add Skater & Scooter cat

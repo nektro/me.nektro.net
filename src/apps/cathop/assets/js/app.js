@@ -4,8 +4,6 @@
  * Art and Music by Andrew Tran
  */
 /**
- * Firefox doesn't support ES6 Modules
- * https://spreadsheets.google.com/feeds/list/1zSuTW719Q9ydAio33I-zC3LonL8F0GPe_GUOSLYOQuU/od6/public/values?alt=json
  * https://developers.google.com/drive/v3/web/appdata
  */
 //
@@ -19,23 +17,23 @@ import { Ground } from "./Ground.js";
 import { Cat } from "./Cat.js";
 import { Enemy } from "./Enemy.js";
 //
-const VERSION = `0.6`;
-const MAPS = ['city_day','city_night'];
-const CATS = ['gyzmo','lilac','turkey','skater&scooter'];
+const VERSION = "0.6";
+const MAPS = ["city_day","city_night"];
+const CATS = ["gyzmo","lilac","turkey","skater&scooter"];
 //
-window.addEventListener('load', async function() {
+window.addEventListener("load", async function() {
     console.log(`Starting Cat Hop v${VERSION}`);
     const maps = await Promise.all(MAPS.map(v => a.getBackground(v)));
     const cats = await Promise.all(CATS.map(v => a.getCat(v)));
-    const pics = array_to_object(['logo','start','select_character','select_map','back','confirm','left','right'], await a.getAssets([
-        'game/logo.png', 'game/buttons/start.png',
-        'game/buttons/select_character.png', 'game/buttons/select_map.png',
-        'game/buttons/back.png', 'game/buttons/confirm.png',
-        'game/buttons/left.png', 'game/buttons/right.png'
+    const pics = array_to_object(["logo","start","select_character","select_map","back","confirm","left","right"], await a.getAssets([
+        "game/logo.png", "game/buttons/start.png",
+        "game/buttons/select_character.png", "game/buttons/select_map.png",
+        "game/buttons/back.png", "game/buttons/confirm.png",
+        "game/buttons/left.png", "game/buttons/right.png"
     ]));
-    const sfx = array_to_object(['jump','death','highscore','click'], (await a.getAssets([
-        'game/sfx/jump.mp3', 'game/sfx/death.mp3',
-        'game/sfx/highscore.mp3', 'game/sfx/select.mp3'
+    const sfx = array_to_object(["jump","death","highscore","click"], (await a.getAssets([
+        "game/sfx/jump.mp3", "game/sfx/death.mp3",
+        "game/sfx/highscore.mp3", "game/sfx/select.mp3"
     ])).map(v => {
         v.loop = false;
         return v;
@@ -66,8 +64,8 @@ window.addEventListener('load', async function() {
     // local functions [[temp]]
     function drawScore() {
         const dc = parseInt(Math.log10(score) % 10 + 1); // digit count
-        a.pen.drawText(10, 55, 'fill', `${score}`, 'white', `36px '${a.font_p}'`);
-        a.pen.drawText(10, 80, 'fill', `Top: ${high_score.score}`, 'white', `12px '${a.font_p}'`);
+        a.pen.drawText(10, 55, "fill", `${score}`, "white", `36px "${a.font_p}"`);
+        a.pen.drawText(10, 80, "fill", `Top: ${high_score.score}`, "white", `12px "${a.font_p}"`);
     }
     function setHighScore(new_score) {
         high_score.score = new_score;
@@ -91,13 +89,13 @@ window.addEventListener('load', async function() {
     // // title screen
     game.addState(new (class extends CH_GameState {
         constructor() {
-            super('title');
+            super("title");
             this.logo = new CH_PictureStatic(pics.logo);
             this.logo.pos = new Point(a.w / 2 - this.logo.width() / 2, a.h * .1);
             this.start_button = new CH_PictureStatic(pics.start);
             this.start_button.pos = new Point(a.w / 2 - this.start_button.width() / 2, this.logo.pos.y + this.logo.height() + (50 * a.r));
             this.select_character = new CH_PictureStatic(pics.select_character);
-            let midcen = new Point(a.w / 2, (this.start_button.pos.y + this.start_button.height() + a.h) / 2)
+            let midcen = new Point(a.w / 2, (this.start_button.pos.y + this.start_button.height() + a.h) / 2);
             this.select_character.pos = midcen.clone().sub(new Point(this.select_character.width() + a.r * 15, this.select_character.height() / 2));
             this.select_map = new CH_PictureStatic(pics.select_map);
             this.select_map.pos = midcen.clone().sub(new Point(a.r * -15, this.select_map.height() / 2));
@@ -126,22 +124,22 @@ window.addEventListener('load', async function() {
             this.start_button.draw(...this.start_button.pos.spread());
             this.select_character.draw(...this.select_character.pos.spread());
             this.select_map.draw(...this.select_map.pos.spread());
-            a.pen.drawText(5, a.h - 5, 'fill', `(c) Sean Denny 2017, v${VERSION}`, 'white', `10px '${a.font_p}'`);
+            a.pen.drawText(5, a.h - 5, "fill", `(c) Sean Denny 2018, v${VERSION}`, "white", `10px "${a.font_p}"`);
         }
         clickDown(e) {
             const { clientX, clientY } = (e.__proto__.constructor === MouseEvent ? e : e.changedTouches[0]); // click event position
             const click = new Point(clientX, clientY);
             if (this.start_button.getBoundingRect().intersects(click)) {
                 sfx.click.play();
-                game.gotoState('game');
+                game.gotoState("game");
             }
             if (this.select_character.getBoundingRect().intersects(click)) {
                 sfx.click.play();
-                game.transitionTo('character_select');
+                game.transitionTo("character_select");
             }
             if (this.select_map.getBoundingRect().intersects(click)) {
                 sfx.click.play();
-                game.transitionTo('map_select');
+                game.transitionTo("map_select");
             }
         }
     })());
@@ -149,7 +147,7 @@ window.addEventListener('load', async function() {
     // // actual game
     game.addState(new (class extends CH_GameState {
         constructor() {
-            super('game');
+            super("game");
         }
         init() {
             a.audio_controller.start(map[4]);
@@ -164,7 +162,7 @@ window.addEventListener('load', async function() {
                 enemies.push(new Enemy(map[3]));
             }
             //
-            enemies.forEach((v,i) => {
+            enemies.forEach((v) => {
                 v.update();
             });
             //
@@ -192,7 +190,7 @@ window.addEventListener('load', async function() {
         draw() {
             background.draw();
             ground.draw();
-            enemies.forEach((v,i) => { v.draw(); });
+            enemies.forEach((v) => { v.draw(); });
             cat.draw();
             drawScore();
         }
@@ -214,17 +212,17 @@ window.addEventListener('load', async function() {
             else {
                 sfx.death.play();
             }
-            game.gotoState('death_score');
+            game.gotoState("death_score");
         }
     })());
 
     // // death score screen
     game.addState(new (class extends CH_GameState {
         constructor() {
-            super('death_score');
-            this.new_highscore = new CH_PictureStatic(document.getElementById(`i_new_highscore`));
+            super("death_score");
+            this.new_highscore = new CH_PictureStatic(document.getElementById("i_new_highscore"));
             this.new_highscore.pos = new Point(a.w / 2 - this.new_highscore.img.width / 2, a.h * .1);
-            this.replay_button = new CH_PictureStatic(document.getElementById('i_replay_button'));
+            this.replay_button = new CH_PictureStatic(document.getElementById("i_replay_button"));
             this.replay_button.pos = new Point(a.w / 2 - this.replay_button.img.width / 2, this.new_highscore.pos.y + this.new_highscore.height() + (50 * a.r));
         }
         draw() {
@@ -245,14 +243,14 @@ window.addEventListener('load', async function() {
                 if (high_score.just_set) setHighScore(score);
                 enemies = [];
                 sfx.click.play();
-                game.gotoState('title');
+                game.gotoState("title");
             }
         }
     })());
 
     const margin = a.r * 10;
     const btn_back = new CH_PictureStatic(pics.back);
-    btn_back.pos = new Point(margin, margin)
+    btn_back.pos = new Point(margin, margin);
     const btn_confirm = new CH_PictureStatic(pics.confirm);
     btn_confirm.pos = new Point(a.w / 2 - btn_confirm.width() / 2, a.h - margin - btn_confirm.height());
     const btn_left = new CH_PictureStatic(pics.left);
@@ -263,7 +261,7 @@ window.addEventListener('load', async function() {
     // map select
     game.addState(new (class extends CH_GameState {
         constructor() {
-            super('map_select');
+            super("map_select");
             this.i = new Loop(0, maps.length - 1, 0);
             this.temp = [];
         }
@@ -292,7 +290,7 @@ window.addEventListener('load', async function() {
             if (btn_back.getBoundingRect().intersects(click)) {
                 a.audio_controller.stop(this.temp[2]);
                 sfx.click.play();
-                game.transitionTo('title');
+                game.transitionTo("title");
             }
             if (btn_right.getBoundingRect().intersects(click)) {
                 sfx.click.play();
@@ -308,7 +306,7 @@ window.addEventListener('load', async function() {
                 setMap(this.i.value);
                 a.audio_controller.stop(this.temp[2]);
                 sfx.click.play();
-                game.transitionTo('title');
+                game.transitionTo("title");
             }
         }
     })());
@@ -316,7 +314,7 @@ window.addEventListener('load', async function() {
     // character select
     game.addState(new (class extends CH_GameState {
         constructor() {
-            super('character_select');
+            super("character_select");
             this.i = new Loop(0, cats.length - 1, 0);
         }
         init() {
@@ -336,7 +334,7 @@ window.addEventListener('load', async function() {
             this.temp.draw();
         }
         _updateTempChar() {
-            this.temp = new Cat(cats[this.i.value][0])
+            this.temp = new Cat(cats[this.i.value][0]);
             this.temp.pos.x = a.w / 2 - this.temp.width() / this.temp.fc / 2;
             this.temp.pos.y = a.g - this.temp.height();
         }
@@ -345,7 +343,7 @@ window.addEventListener('load', async function() {
             const click = new Point(clientX, clientY);
             if (btn_back.getBoundingRect().intersects(click)) {
                 sfx.click.play();
-                game.transitionTo('title');
+                game.transitionTo("title");
             }
             if (btn_right.getBoundingRect().intersects(click)) {
                 sfx.click.play();
@@ -360,7 +358,7 @@ window.addEventListener('load', async function() {
             if (btn_confirm.getBoundingRect().intersects(click)) {
                 sfx.click.play();
                 setCharacter(this.i.value);
-                game.transitionTo('title');
+                game.transitionTo("title");
             }
         }
     })());
