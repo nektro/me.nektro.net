@@ -59,3 +59,5 @@
 > "If a system is to have conceptual integrity, someone must control the concepts."
 
 > "You don't thank the kidnapper for returning the hostages."
+
+> Did you know that you only use 1% of your keyboard, since your almost never pressing more than one key at once? Some experts can use 5 to 10% of their keyboards in the form of 'shortcuts' and 'hotkeys', but imagine how productive we would be if we could use 100%!
