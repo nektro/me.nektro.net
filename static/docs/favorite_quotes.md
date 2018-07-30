@@ -1,7 +1,5 @@
 # My Favorite Quotes
 
-I used to store these on Facebook, but I wanted to share them.
-
 > "If you come in last place it doesn't mean you're bad, it just means everyone else is better than you."
 
 > "Peace is not the absence of conflict, but the ability to deal with it in a peaceful way."
