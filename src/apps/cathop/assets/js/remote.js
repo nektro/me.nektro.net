@@ -1,7 +1,7 @@
 /**
  */
 //
-export * from "https://nektro.github.io/basalt/src/pencil.js";
-export * from "https://nektro.github.io/basalt/src/geometry.js";
-export * from "https://nektro.github.io/basalt/src/loop.js";
-export * from "https://nektro.github.io/basalt/src/keyboard.js";
+export * from "https://cdn.rawgit.com/nektro/basalt/4b37e8c/src/pencil.js";
+export * from "https://cdn.rawgit.com/nektro/basalt/4b37e8c/src/geometry.js";
+export * from "https://cdn.rawgit.com/nektro/basalt/4b37e8c/src/loop.js";
+export * from "https://cdn.rawgit.com/nektro/basalt/4b37e8c/src/keyboard.js";
