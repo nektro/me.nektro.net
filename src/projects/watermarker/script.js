@@ -1,8 +1,8 @@
 /**
  */
 //
-import { read } from "https://cdn.rawgit.com/Nektro/modules.js/04673d0/src/read.js";
-import { saveAs } from "https://cdn.rawgit.com/eligrey/FileSaver.js/e865e37/src/FileSaver.js";
+import { read } from "https://cdn.jsdelivr.net/gh/Nektro/modules.js@04673d0/src/read.js";
+import { saveAs } from "https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js@e865e37/src/FileSaver.js";
 
 //
 document.getElementById("go").addEventListener("click", function() {
